@@ -17,7 +17,9 @@ When editing a post, check "Mark as Old" in the metabox labeled "Old Post Notifi
 Further Customization with filters, described in documentation.
 
 
-[Documentation](https://github.com/billerickson/old-post-notification/wiki) | [Support Forum](https://github.com/billerickson/old-post-notification/issues)
+[Documentation](https://github.com/billerickson/old-post-notification/wiki)
+
+**No support will be provided by the developer**
 
 == Changelog ==
 
