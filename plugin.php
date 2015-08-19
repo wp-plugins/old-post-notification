@@ -3,7 +3,7 @@
 Plugin Name: Old Post Notification
 Plugin URI: http://www.wordpress.org/extend/plugins/old-post-notification
 Description: Mark posts as old and display a notification message above the content.
-Version: 1.0
+Version: 1.1
 Author: Bill Erickson
 Author URI: http://www.billerickson.net
 License: GPLv2 or later
@@ -142,8 +142,8 @@ class Old_Post_Notification {
 	function default_text_field() {
 		
 		echo wp_editor( 
-			apply_filters( 'old_post_notification_default_text', '' ), 
-			'old_post_notification_options[old_post_notification_default_text]' 
+			apply_filters( 'old_post_notification_default_text', '' ), 'old_post_notification_default_text', 
+			array( 'textarea_name' => 'old_post_notification_options[old_post_notification_default_text]', )
 		);
 	}
 	
@@ -185,7 +185,6 @@ class Old_Post_Notification {
 		$old = get_post_meta( $post->ID, 'old_post_notification_marked_old', true );
 		if( 'on' !== $old )
 			return;
-			
 		$default = apply_filters( 'old_post_notification_default_text', '' );
 		$override = get_post_meta( $post->ID, 'old_post_notification_custom_message', true );
 		
@@ -218,4 +217,3 @@ class Old_Post_Notification {
 }
 
 $Old_Post_Notification = new Old_Post_Notification;
-?>
